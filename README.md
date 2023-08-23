@@ -34,4 +34,6 @@ It should look like this at the very end
 
 For it to work, you must use this launch property in steam: `WINEDLLOVERRIDES="winhttp=n,b" %command%`
 
-# [How to use](https://github.com/Kade-github/BombRushSFX/blob/main/Tutorial.MD)
+# (Written Tutorial) [How to use](https://github.com/Kade-github/BombRushSFX/blob/main/Tutorial.MD)
+
+# [Video tutorial](https://www.youtube.com/watch?v=jKoo8yNCMR8)
