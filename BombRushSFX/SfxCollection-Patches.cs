@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using Reptile;
@@ -32,7 +32,6 @@ namespace BombRushSFX
                 foreach(SfxCollection.RandomAudioClipContainer container in __instance.audioClipContainers)
                 foreach (AudioClip clip in container.clips)
                 {
-                    Debug.Log(clip.length);
                     if (clip.loadState == AudioDataLoadState.Unloaded)
                         clip.LoadAudioData();
                 }
