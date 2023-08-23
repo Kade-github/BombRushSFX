@@ -72,3 +72,23 @@ Then you're done!
 If all works it should look like this
 
 ![image](https://i.imgur.com/tYfHhUf.png)
+
+Launch the game, and you should have your custom SFX.
+
+(Oh btw, you can have more than one txt file for sounds in the same folder, and you can use the same collection twice. It'll just add a new audio type to that collection)
+
+And in the txt files, if a line starts with a **#** it is a comment.
+
+Like so (it will be ignored)
+
+```
+# 44 is the id of VoiceMetalHead in the code
+collection: 44
+audios: jump1.ogg, jump2.ogg, jump3.ogg, jump4.ogg, jump5.ogg, jump6.ogg, jump7.ogg 
+# 489 is VoiceJump
+id: 489
+```
+
+## Important Note
+
+If you replace VoiceMetalHead as a collection, you will remove all base game sounds in that collection. So they wont play in game.
