@@ -37,8 +37,6 @@ namespace BombRushSFX
                         clip.LoadAudioData();
                 }
             }
-            
-            Debug.Log("[BRSFX] Playing audio id " + audioClipID);
 
             SfxCollection.RandomAudioClipContainer audioClipContainerFromID = __instance.audioClipContainers.FirstOrDefault(cont => cont.clipID == audioClipID);
             
@@ -60,7 +58,15 @@ namespace BombRushSFX
         {
             if (__result == null)
             {
-                Debug.LogError("[BRSFX] GetRandomAudioClipById Audio clip returned null");
+                SfxCollectionID t = SfxCollectionID.NONE;
+                if (__instance.name.StartsWith("m_"))
+                {
+                    KeyValuePair<SfxCollectionID, SfxCollection> col =
+                        BombRushSFX.collections.FirstOrDefault(c => c.Value.name == __instance.name);
+                    t = col.Key;
+                }
+
+                Debug.LogError("[BRSFX] GetRandomAudioClipById Audio clip returned null (ID: " + audioClipID + ", in collection " + t + ")");
             }
         }
     }
