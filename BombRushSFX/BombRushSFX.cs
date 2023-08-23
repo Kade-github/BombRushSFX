@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -156,9 +156,6 @@ namespace BombRushSFX
                 return;
             }
             
-            SfxCollection collection = ScriptableObject.CreateInstance<SfxCollection>();
-            collection.name = "m_" + (int)type;
-            collection.collectionName = type.ToString();
             SfxCollection.RandomAudioClipContainer container = new SfxCollection.RandomAudioClipContainer();
             try
             {
@@ -184,7 +181,6 @@ namespace BombRushSFX
             else
             {
                 containers[type].Add(container);
-                collections.Add(type, collection);
             }
             
 
@@ -224,14 +220,19 @@ namespace BombRushSFX
 
             Logger.LogInfo("[BRSFX] Loading SFXCollections into the game...");
             
-            foreach (KeyValuePair<SfxCollectionID, SfxCollection> c in collections)
+            foreach (KeyValuePair<SfxCollectionID, SfxCollection> c in Core.instance.AudioManager.sfxLibrary.sfxCollectionIDDictionary)
             {
+                if (containers.ContainsKey(c.Key))
+                    foreach (SfxCollection.RandomAudioClipContainer cont2 in c.Value.audioClipContainers)
+                    {
+                        foreach (SfxCollection.RandomAudioClipContainer cont in containers[c.Key])
+                        {
+                            if (cont.clipID == cont2.clipID)
+                                cont2.clips = cont.clips;
+                        }
+                    }
 
-                c.Value.audioClipContainers = containers[c.Key].ToArray();
-                Logger.LogInfo("[BRSFX] Set " + c.Value.name + " audio clip containers to " + c.Value.audioClipContainers.Length);
-                Core.Instance.AudioManager.sfxLibrary.sfxCollectionIDDictionary[c.Key] = c.Value;
-                Core.Instance.AudioManager.sfxLibrary.sfxCollectionDictionary[c.Value.collectionName] = c.Value;
-                
+
             }
             
             Logger.LogInfo("[BRSFX] Bomb Rush SFX has been loaded!");
