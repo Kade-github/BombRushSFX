@@ -66,6 +66,7 @@ namespace BombRushSFX
                 }
 
                 Debug.LogError("[BRSFX] GetRandomAudioClipById Audio clip returned null (ID: " + audioClipID + ", in collection " + t + ")");
+                __result = AudioClip.Create("hello", 1, 1, 44100, false, false);
             }
         }
     }
