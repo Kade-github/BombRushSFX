@@ -91,4 +91,4 @@ id: 489
 
 ## Important Note
 
-If you replace VoiceMetalHead as a collection, you will remove all base game sounds in that collection. So they wont play in game.
+If you replace VoiceMetalHead (or any collection really) as a collection, you will remove all base game sounds in that collection. So they wont play in game.
