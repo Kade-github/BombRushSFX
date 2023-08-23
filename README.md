@@ -3,6 +3,8 @@ A Bomb Rush Cyberfunk mod that lets you replace sfx and add your own!
 
 ## Installation
 
+### [THUNDERSTORE (CAN BE USED ON R2MODMAN)](https://thunderstore.io/c/bomb-rush-cyberfunk/p/Kade/BombRushSFX/)
+
 Go to the [latest release](https://github.com/Kade-github/BombRushSFX/releases/latest), and download either:
 
 ### BepInEx Included
