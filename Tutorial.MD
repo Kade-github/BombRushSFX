@@ -2,6 +2,10 @@
 
 Okay so, a folder (on startup for the first time) should be made in **Bomb Rush Cyberfunk_Data/StreamingAssets/Mods/BombRushSFX/SFX/**, this is where you put all your sfx.
 
+## Thunderstore mods
+
+If you're going to depend on BombRushSFX, you can instead put your SFX in **BepinEx/Plugins/BombRushSFX/SFX**, instead of the mods directory in streamingassets.
+
 I like to organize in folders, but you don't have to.
 
 ## Step 1
