@@ -211,10 +211,11 @@ namespace BombRushSFX
             done = 0;
 
             yield return StartCoroutine(SearchDirectories());
-            
+            yield return StartCoroutine(SearchDirectories(Paths.PluginPath + "/BombRushSFX/SFX")); // also search bepinex folder
             // loading the text files
             
             LoadTexts();
+            LoadTexts(Paths.PluginPath + "/BombRushSFX/SFX"); // also search bepinex folder
             
             // load them into the fuckin game
 
@@ -247,6 +248,12 @@ namespace BombRushSFX
                 Directory.CreateDirectory(Application.streamingAssetsPath + "/Mods/BombRushSFX");
             if (!Directory.Exists(Application.streamingAssetsPath + "/Mods/BombRushSFX/SFX"))
                 Directory.CreateDirectory(Application.streamingAssetsPath + "/Mods/BombRushSFX/SFX");
+            
+            if (!Directory.Exists(Paths.PluginPath + "/BombRushSFX"))
+                Directory.CreateDirectory(Paths.PluginPath + "/BombRushSFX");
+            if (!Directory.Exists(Paths.PluginPath + "/BombRushSFX/SFX"))
+                Directory.CreateDirectory(Paths.PluginPath + "/BombRushSFX/SFX");
+            
 
             var harmony = new Harmony("kade.bombrushsfx");
             harmony.PatchAll();
