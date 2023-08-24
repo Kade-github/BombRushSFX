@@ -4,7 +4,7 @@ Okay so, a folder (on startup for the first time) should be made in **Bomb Rush 
 
 ## Thunderstore mods
 
-If you're going to depend on BombRushSFX, you can instead put your SFX in **BepinEx/Plugins/BombRushSFX/SFX**, instead of the mods directory in streamingassets.
+If you're going to depend on BombRushSFX, you can instead put your SFX in **BepinEx/Config/BombRushSFX/SFX**, instead of the mods directory in streamingassets.
 
 I like to organize in folders, but you don't have to.
 
