@@ -1,3 +1,4 @@
+# **BRSFX** does work on the current version of the game (publicbeta)
 # BombRushSFX
 A Bomb Rush Cyberfunk mod that lets you replace sfx and add your own!
 
